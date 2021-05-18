@@ -60,7 +60,7 @@
             OnLogin(){
 				
 				//不可信任信息筛选
-				if(this.inName == "" && this.inPwd == ""){
+				if(this.inName == "" || this.inPwd == ""){
 					
 					uni.showToast({
 						title: '输入项请勿留空',
@@ -81,7 +81,7 @@
 						},
 						success: res => {
 							debugger
-							if(res.data.length < 1){
+							if(res.data == "" || res.data == "[]"){
 								uni.showToast({
 									title: '账户或者密码错误，请重试！',
 									duration: 1000

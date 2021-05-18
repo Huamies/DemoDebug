@@ -29,6 +29,7 @@
 					list: [
 						"/static/images/douyin/0.jpg",
 						"/static/images/douyin/4.jpg",
+						"/static/images/douyin/5.jpg",
 						"/static/images/douyin/7.jpg",
 					]
 				}

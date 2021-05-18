@@ -1,5 +1,7 @@
 <template>
 	<view>
+		
+		<!-- 顶部文字 -->
 		<view class="title" :class="topNavStyle.class" :style="topNavStyle.style">
 			<view class="flex_col">
 				<view class="box1"></view>
@@ -13,10 +15,49 @@
 				</view>
 			</view>
 		</view>
+		
+		<!-- 滑动页的图片 -->
 		<card-swiper></card-swiper>
-		<view style="height: 600px;">
+		
+		<!-- 滑动页下部分文字 -->
+		<view style="height: 233px;">
 			<view style="padding-top: 50rpx;text-align: center;">向上滚动查看标题栏渐变效果</view>
 		</view>
+		<!-- 底部操作条 -->
+		<view class="cu-bar tabbar margin-bottom-xl bg-white">
+			<!-- 首页替换 -->
+			<view class="action text-green" v-show="tap" @click="changeIcon(tap,'1')">
+				<view class="cuIcon-homefill"></view> 首页
+			</view>
+			<view class="action text-gray" v-show="!tap" @click="changeIcon(tap,'1')">
+				<view class="cuIcon-homefill"></view> 首页
+			</view>
+			
+			<view class="action text-green" v-show="fl" @click="changeIcon(fl,'2')">
+				<view class="cuIcon-similar"></view> 分类
+			</view>
+			<view class="action text-gray" v-show="!fl" @click="changeIcon(fl,'2')">
+				<view class="cuIcon-similar"></view> 分类
+			</view>
+			
+			<view class="action text-gray add-action">
+				<button class="cu-btn cuIcon-add bg-green shadow"></button>
+				发布
+			</view>
+			<view class="action text-gray">
+				<view class="cuIcon-cart">
+					<view class="cu-tag badge">99</view>
+				</view>
+				购物车
+			</view>
+			<view class="action text-gray">
+				<view class="cuIcon-my">
+					<view class="cu-tag badge"></view>
+				</view>
+				我的
+			</view>
+		</view>
+		
 	</view>
 </template>
 
@@ -28,6 +69,8 @@
 				topNavIndex:0,
 				topNavArr:['推荐','热门','新作'],
 				pageScrollTop:0,	// 页面滚动距离
+				tap:false,
+				fl:false,
 			}
 		},
 		components:{
@@ -59,6 +102,19 @@
 				uni.navigateTo({
 					url:`/pages/search/search`  
 				})
+			},
+			changeIcon(a,b){
+				switch (a == false){
+					case b==1:
+						//this.fl = flase;
+						this.tap = !a;
+						break;
+					case b==2:
+						//this.tap = fale;
+						this.fl = !a;
+						break;
+				}
+				
 			}
 		}
 	}
