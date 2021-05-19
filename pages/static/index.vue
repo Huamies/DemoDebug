@@ -32,7 +32,7 @@
 			<view class="action text-gray" v-show="!tap" @click="changeIcon(tap,'1')">
 				<view class="cuIcon-homefill"></view> 首页
 			</view>
-			
+			<!-- 分类替换 -->
 			<view class="action text-green" v-show="fl" @click="changeIcon(fl,'2')">
 				<view class="cuIcon-similar"></view> 分类
 			</view>
@@ -44,15 +44,30 @@
 				<button class="cu-btn cuIcon-add bg-green shadow"></button>
 				发布
 			</view>
-			<view class="action text-gray">
+			
+			<!-- 购物车替换 -->
+			<view class="action text-green" v-show="gwc" @click="changeIcon(gwc,'3')">
 				<view class="cuIcon-cart">
-					<view class="cu-tag badge">99</view>
+					<!-- <view class="cu-tag badge">99</view> -->
 				</view>
 				购物车
 			</view>
-			<view class="action text-gray">
+			<view class="action text-gray" v-show="!gwc" @click="changeIcon(gwc,'3')">
+				<view class="cuIcon-cart">
+					<!-- <view class="cu-tag badge">99</view> -->
+				</view>
+				购物车
+			</view>
+			<!-- 我的替换 -->
+			<view class="action text-green" v-show="me" @click="changeIcon(me,'4')">
 				<view class="cuIcon-my">
-					<view class="cu-tag badge"></view>
+					<!-- <view class="cu-tag badge"></view> -->
+				</view>
+				我的
+			</view>
+			<view class="action text-gray" v-show="!me" @click="changeIcon(me,'4')">
+				<view class="cuIcon-my">
+					<!-- <view class="cu-tag badge"></view> -->
 				</view>
 				我的
 			</view>
@@ -69,8 +84,11 @@
 				topNavIndex:0,
 				topNavArr:['推荐','热门','新作'],
 				pageScrollTop:0,	// 页面滚动距离
-				tap:false,
+				tap:true,
 				fl:false,
+				gwc:false,
+				me:false,
+				
 			}
 		},
 		components:{
@@ -104,15 +122,37 @@
 				})
 			},
 			changeIcon(a,b){
-				switch (a == false){
-					case b==1:
-						//this.fl = flase;
-						this.tap = !a;
-						break;
-					case b==2:
-						//this.tap = fale;
-						this.fl = !a;
-						break;
+				if(a == false){
+					switch (b){
+						case "1":{
+							this.tap = !a;
+							this.fl = false;
+							this.gwc = false;
+							this.me = false;
+							break;
+						}
+						case "2":{
+							this.fl = !a;
+							this.tap = a;
+							this.gwc = a;
+							this.me = a;
+							break;
+						}
+						case "3":{
+							this.gwc = !a;
+							this.fl = a;
+							this.tap = a;
+							this.me = a;
+							break;
+						}
+						case "4":{
+							this.me = !a;
+							this.gwc = a;
+							this.fl = a;
+							this.tap = a;
+							break;
+						}
+					}
 				}
 				
 			}
