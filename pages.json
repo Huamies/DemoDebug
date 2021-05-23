@@ -10,6 +10,10 @@
 			"style": {}
 		},
 		{
+			"path": "pages/static/me",
+			"style": {}
+		},
+		{
 			"path": "pages/static/index",
 			"style": {}
 		},

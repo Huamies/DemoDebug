@@ -121,6 +121,7 @@
 					url:`/pages/search/search`  
 				})
 			},
+			//判断点击底部栏的点击情况
 			changeIcon(a,b){
 				if(a == false){
 					switch (b){
