@@ -43,6 +43,8 @@
 				
 			</view>
 			
+			<view class="tab"></view>
+			
 			<view class='padding margin text-center'>
 				<view class='cu-btn bg-green lg block shadow radius margin-xl' @tap="showModal" data-target="viewModal">
 					打开抽屉

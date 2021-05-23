@@ -23,55 +23,6 @@
 		<view style="height: 233px;">
 			<view style="padding-top: 50rpx;text-align: center;">向上滚动查看标题栏渐变效果</view>
 		</view>
-		<!-- 底部操作条 -->
-		<view class="cu-bar tabbar margin-bottom-xl bg-white">
-			<!-- 首页替换 -->
-			<view class="action text-green" v-show="tap" @click="changeIcon(tap,'1')">
-				<view class="cuIcon-homefill"></view> 首页
-			</view>
-			<view class="action text-gray" v-show="!tap" @click="changeIcon(tap,'1')">
-				<view class="cuIcon-homefill"></view> 首页
-			</view>
-			<!-- 分类替换 -->
-			<view class="action text-green" v-show="fl" @click="changeIcon(fl,'2')">
-				<view class="cuIcon-similar"></view> 分类
-			</view>
-			<view class="action text-gray" v-show="!fl" @click="changeIcon(fl,'2')">
-				<view class="cuIcon-similar"></view> 分类
-			</view>
-			
-			<view class="action text-gray add-action">
-				<button class="cu-btn cuIcon-add bg-green shadow"></button>
-				发布
-			</view>
-			
-			<!-- 购物车替换 -->
-			<view class="action text-green" v-show="gwc" @click="changeIcon(gwc,'3')">
-				<view class="cuIcon-cart">
-					<!-- <view class="cu-tag badge">99</view> -->
-				</view>
-				购物车
-			</view>
-			<view class="action text-gray" v-show="!gwc" @click="changeIcon(gwc,'3')">
-				<view class="cuIcon-cart">
-					<!-- <view class="cu-tag badge">99</view> -->
-				</view>
-				购物车
-			</view>
-			<!-- 我的替换 -->
-			<view class="action text-green" v-show="me" @click="changeIcon(me,'4')">
-				<view class="cuIcon-my">
-					<!-- <view class="cu-tag badge"></view> -->
-				</view>
-				我的
-			</view>
-			<view class="action text-gray" v-show="!me" @click="changeIcon(me,'4')">
-				<view class="cuIcon-my">
-					<!-- <view class="cu-tag badge"></view> -->
-				</view>
-				我的
-			</view>
-		</view>
 		
 	</view>
 </template>
@@ -121,42 +72,6 @@
 					url:`/pages/search/search`  
 				})
 			},
-			//判断点击底部栏的点击情况
-			changeIcon(a,b){
-				if(a == false){
-					switch (b){
-						case "1":{
-							this.tap = !a;
-							this.fl = false;
-							this.gwc = false;
-							this.me = false;
-							break;
-						}
-						case "2":{
-							this.fl = !a;
-							this.tap = a;
-							this.gwc = a;
-							this.me = a;
-							break;
-						}
-						case "3":{
-							this.gwc = !a;
-							this.fl = a;
-							this.tap = a;
-							this.me = a;
-							break;
-						}
-						case "4":{
-							this.me = !a;
-							this.gwc = a;
-							this.fl = a;
-							this.tap = a;
-							break;
-						}
-					}
-				}
-				
-			}
 		}
 	}
 </script>

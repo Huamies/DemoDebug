@@ -10,8 +10,13 @@ Vue.component('components',components)
 import plugin from './pages/plugin/home.vue'
 Vue.component('plugin',plugin)
 
-import cuCustom from './colorui/components/cu-custom.vue'
-Vue.component('cu-custom',cuCustom)
+// 首页信息页
+import sy from './pages/static/index.vue'
+Vue.component('sy',sy)
+
+// 我的信息页
+import me from './pages/static/me.vue'
+Vue.component('me',me)
 
 Vue.config.productionTip = false
 
