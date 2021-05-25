@@ -5,6 +5,7 @@
 		<plugin v-if="PageCur=='plugin'"></plugin>
 		<sy v-if="PageCur=='sy'"></sy>
 		<me v-if="PageCur=='me'"></me>
+		<sort v-if="PageCur=='sort'"></sort>
 		
 		<view class="cu-bar tabbar bg-white shadow foot">
 			
@@ -14,8 +15,8 @@
 			</view>
 			
 			<!-- tabbar 分类-->
-			<view class="action" style="top: 8rpx;" @click="NavChange" data-cur="component">
-				<view :class="PageCur=='component'?'cuIcon-sort text-green':'cuIcon-sort text-gray'"> <view class="margin-top-xs" style="font-size: 12px;">分类</view> </view>
+			<view class="action" style="top: 8rpx;" @click="NavChange" data-cur="sort">
+				<view :class="PageCur=='sort'?'cuIcon-sort text-green':'cuIcon-sort text-gray'"> <view class="margin-top-xs" style="font-size: 12px;">分类</view> </view>
 			</view>
 			
 			<view class="action text-gray add-action">
@@ -38,11 +39,17 @@
 </template>
 
 <script>
+	
+	import sort from "../sort/sort.vue"
+	
 	export default {
 		data() {
 		return {
-				PageCur: 'sy'
+				PageCur: 'sy',
 			}
+		},
+		comments:{
+			sort
 		},
 		methods: {
 			NavChange: function(e) {

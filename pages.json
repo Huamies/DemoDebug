@@ -6,21 +6,19 @@
 			"style": {}
 		},
 		{
-			"path": "pages/static/login",
-			"style": {
-				"navigationBarTitleText":"首页"
-			}
-		},
-		{
-			"path": "pages/static/me",
+			"path": "pages/static/login/login",
 			"style": {}
 		},
 		{
-			"path": "pages/static/index/index",
+			"path": "pages/static/me/me",
 			"style": {}
 		},
 		{
-			"path": "pages/static/index",
+			"path": "pages/static/sort/sort",
+			"style": {}
+		},
+		{
+			"path": "pages/static/ho/ho",
 			"style": {}
 		},
 		{
