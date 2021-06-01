@@ -64,8 +64,13 @@
 				<form>
 					<view class="cu-form-group margin-top">
 						<view class="title text-black">邮件：</view>
-						<input placeholder="两字短标题" name="input"></input>
+						<input placeholder="两字短标题" name="input" v-model="input" ></input>
 					</view>
+					
+					<view class="padding flex flex-direction">
+						<button class="cu-btn bg-grey lg" @tap="req()">玄灰</button>
+					</view>
+					
 				</form>
 				
 			</view>
@@ -78,7 +83,7 @@
 				<form>
 					<view class="cu-form-group margin-top">
 						<view class="title text-black">姓名：</view>
-						<input placeholder="两字短标题" name="input"></input>
+						<input placeholder="两字短标题" ></input>
 					</view>
 				</form>
 				
@@ -92,10 +97,18 @@
 	export default {
 		data() {
 			return {
-				modalName:null
+				modalName:null,
+				input:'',
 			};
 		},
+		computed:{
+			
+			
+		},
 		methods: {
+			req(){
+				this.input = this.input
+			},
 			showModal(e) {
 				this.modalName = e.currentTarget.dataset.target
 			},
@@ -104,7 +117,7 @@
 			},
 			tabSelect(e) {
 				this.TabCur = e.currentTarget.dataset.id;
-				this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60
+				//this.scrollLeft = (e.currentTarget.dataset.id - 1) * 60
 			}
 		},
 	}

@@ -2,7 +2,7 @@
 	"pages": [
 		//pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
 		{
-			"path": "pages/static/index/index",
+			"path": "pages/static/ho/ho",
 			"style": {}
 		},
 		{
@@ -11,6 +11,10 @@
 		},
 		{
 			"path": "pages/static/me/me",
+			"style": {}
+		},
+		{
+			"path": "pages/static/card/card",
 			"style": {}
 		},
 		{
@@ -117,7 +121,16 @@
 			"path": "pages/plugin/verticalnav",
 			"style": {}
 		}
-	],
+	    ,{
+            "path" : "pages/static/index/tabbar",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"globalStyle": {
 		"mp-alipay": {
 			/* 支付宝小程序特有相关 */
@@ -129,6 +142,37 @@
 		"navigationStyle": "custom",
 		"navigationBarTextStyle": "white"
 	},
+	"tabBar": {
+	        "color": "#C0C4CC", //未选中的菜单文字颜色
+	        "selectedColor": "#55ff00", //选中时的菜单文字颜色
+	        "borderStyle": "black",
+	        "backgroundColor": "#ffffff", //背景
+	        "list": [{
+	                "pagePath": "pages/static/ho/ho", //主页地址
+	                "iconPath": "static/images/AppIco/home.png", //未选中时的图片
+	                "selectedIconPath": "static/images/AppIco/homeG.png", //选中时的图片
+	                "text": "首页" //菜单文字
+	            },
+	            {
+	                "pagePath": "pages/static/sort/sort",
+	                "iconPath": "static/images/AppIco/menu.png",
+	                "selectedIconPath": "static/images/AppIco/menuG.png",
+	                "text": "分类"
+	            },
+				{
+				    "pagePath": "pages/static/card/card",
+				    "iconPath": "static/images/AppIco/column.png",
+				    "selectedIconPath": "static/images/AppIco/columnG.png",
+				    "text": "动态"
+				},
+				{
+				    "pagePath": "pages/static/me/me",
+				    "iconPath": "static/images/AppIco/user.png",
+				    "selectedIconPath": "static/images/AppIco/userG.png",
+				    "text": "个人"
+				}
+	        ]
+	    },
 	"usingComponts": true,
 		"condition": { //模式配置，仅开发期间生效
 		"current": 0, //当前激活的模式(list 的索引项)

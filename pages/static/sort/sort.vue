@@ -1,24 +1,32 @@
 <template>
 	<view>
+		<!-- 左边顶部返回键和顶部字体 -->
 		<view class="fixed">
 			<!-- <cu-custom :isBack="true" bgColor="bg-shadeTop text-white">
 				<block slot="backText">返回</block>
 				<block slot="content">垂直导航</block>
 			</cu-custom> -->
 		</view>
+		
+		<!-- 自动滚动的顶部图片 -->
 		<swiper class="screen-swiper round-dot" :indicator-dots="true" :circular="true" :autoplay="true" interval="5000"
 		 duration="500">
 			<swiper-item v-for="(item,index) in 4" :key="index">
 				<image :src="'https://ossweb-img.qq.com/images/lol/web201310/skin/big3900'+index+ '.jpg'" mode="aspectFill"></image>
 			</swiper-item>
 		</swiper>
+		
 		<view class="VerticalBox">
+			
+			<!-- 左边类型的选择项一级选项 -->
 			<scroll-view class="VerticalNav nav" scroll-y scroll-with-animation :scroll-top="verticalNavTop" style="height:calc(100vh - 375upx)">
 				<view class="cu-item" :class="index==tabCur?'text-green cur':''" v-for="(item,index) in lists" :key="index" @tap="TabSelect"
 				 :data-id="index">
 					Tab-{{item.name}}
 				</view>
 			</scroll-view>
+			
+			<!-- 通过类型选择后，对应的右边的二级选项 -->
 			<scroll-view class="VerticalMain" scroll-y scroll-with-animation style="height:calc(100vh - 375upx)"
 			 :scroll-into-view="'main-'+mainCur" @scroll="VerticalMain">
 				<view class="padding-top padding-lr" v-for="(item,index) in list" :key="index" :id="'main-'+index">
@@ -106,6 +114,8 @@
 					</view>
 				</view>
 			</scroll-view>
+			
+			
 		</view>
 	</view>
 </template>
